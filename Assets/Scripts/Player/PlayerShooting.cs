@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
@@ -30,7 +29,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 _timer = 0;
 
-                Bullet newBullet = _bulletPool.TryGetElement(_spawnPoint.position, _spawnPoint.rotation);
+                Bullet newBullet = _bulletPool.TryGetElement(_spawnPoint.position, _spawnPoint.rotation); // вот здесь если вызвать перегруженный метод с направлением, то он не работает корректно, а как будто с небольшим отставанием позиций
                 
                 newBullet.ActivateBullet(_spawnPoint.forward);
                 
